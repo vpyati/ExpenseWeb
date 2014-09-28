@@ -48,7 +48,7 @@
 <body>
     <div id="content" class="container">
         <div class="section grid grid5 s3">
-            <h2>Amazon S3 Buckets Changed:</h2>
+            <h2>Amazon S3 Buckets Changed Deploying git:</h2>
             <ul>
             <% for (Bucket bucket : s3.listBuckets()) { %>
                <li> <%= bucket.getName() %> </li>
