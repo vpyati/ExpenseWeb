@@ -1,3 +1,4 @@
+<%@page import="com.amazonaws.internal.StaticCredentialsProvider"%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="com.amazonaws.*" %>
 <%@ page import="com.amazonaws.auth.*" %>
@@ -31,7 +32,8 @@
 
 <%
     if (ec2 == null) {
-        AWSCredentialsProvider credentialsProvider = new ClasspathPropertiesFileCredentialsProvider();
+    	BasicAWSCredentials credentials = new BasicAWSCredentials(System.getProperty("AWS_ACCESS_KEY_ID"),System.getProperty("AWS_SECRET_KEY"));
+        AWSCredentialsProvider credentialsProvider = new StaticCredentialsProvider(credentials);
         ec2    = new AmazonEC2Client(credentialsProvider);
         s3     = new AmazonS3Client(credentialsProvider);
         dynamo = new AmazonDynamoDBClient(credentialsProvider);
