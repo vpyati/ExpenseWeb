@@ -12,12 +12,19 @@ import org.springframework.web.method.support.ModelAndViewContainer;
 import org.springframework.web.util.WebUtils;
 
 import com.vikram.custombeans.User;
+import com.vikram.openidconnect.IOpenConnectCredentials.ICredentials;
 import com.vikram.openidconnect.google.GoogleCredentials;
 public class UserResolver implements HandlerMethodArgumentResolver{
 
-	@Autowired
+	
 	private GoogleCredentials googleCredentials;
 	
+
+	public UserResolver(GoogleCredentials googleCredentials) {
+		super();
+		this.googleCredentials = googleCredentials;
+	}
+
 	@Override
 	public Object resolveArgument(MethodParameter arg0,
 			ModelAndViewContainer arg1, NativeWebRequest request,
@@ -35,7 +42,8 @@ public class UserResolver implements HandlerMethodArgumentResolver{
 		
 		String value = authCode.getValue();
 		
-		return googleCredentials.getCredentials(value).getConverter().getUser();		
+		ICredentials credentials =  googleCredentials.getCredentials(value);
+		return credentials.getConverter().getUser(credentials.getTokenResponse());
 	}
 
 	@Override

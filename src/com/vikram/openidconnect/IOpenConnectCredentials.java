@@ -8,21 +8,15 @@ public interface IOpenConnectCredentials {
 	
 	public interface ICredentials{
 		
-		public String getAccessToken();
-		
-		public String getIdToken();
-		
-		public String expiresIn();
-		
-		public String tokenType();	
-		
+		public GetTokenResponse getTokenResponse();
+				
 		public ICredentialToUserConverter getConverter();
 	}
 	
 	
 	public interface ICredentialToUserConverter{
 		
-		public User getUser();		
+		public User getUser(GetTokenResponse tokenResponse);		
 	}
 	
 }

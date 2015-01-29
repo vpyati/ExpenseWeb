@@ -1,0 +1,29 @@
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar {
+  margin-bottom: 30px;
+}
+
+.navbar-brand {
+	float: none;
+	height: 50px;
+	padding: 10px 10px;
+	font-size: 40px;
+	line-height: 30px;
+	margin-left: 20px !important ;
+	margin-right: 20px;
+}
+
+#logoimg{
+	height : 40px;
+	width : 40px;
+	padding-bottom: 7px;
+}
+
+#page_footer{
+	display: inline;
+	
+}

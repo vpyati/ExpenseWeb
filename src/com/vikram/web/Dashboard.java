@@ -23,12 +23,14 @@ public class Dashboard {
  
 
 		if(user.isValidUser()){
-			// redirect to dashboard
+			ModelAndView mv = new ModelAndView();
+			mv.addObject("useremail", user.getEmailAddress());
+			return mv;
 		}
 		
 		RedirectView view = new RedirectView("/login",true);
 		
-		 return new ModelAndView(view);
+		return new ModelAndView(view);
 		
 	}
 
