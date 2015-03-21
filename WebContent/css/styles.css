@@ -17,13 +17,87 @@ body {
 	margin-right: 20px;
 }
 
+
+.navbar-brand-login {
+	height: 50px;
+	padding: 10px 10px;
+	font-size: 40px;
+	line-height: 30px;
+	margin-left: auto !important ;
+	margin-right: auto !important;
+}
+
 #logoimg{
 	height : 40px;
 	width : 40px;
 	padding-bottom: 7px;
 }
 
-#page_footer{
-	display: inline;
-	
+/* #page_footer{ */
+/*   clear: both; */
+/*   display: block;  */
+/*   text-align: center; */
+/*   width: 100%;  */
+/* } */
+
+#page_footer ul{margin-left: -40px;}
+#page_footer ul li {display: inline;}
+
+
+.btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 30px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+
+.ten-px{
+	height: 10px;
+}
+
+.twenty-px{
+	height: 20px;
+}
+
+.forty-px{
+	height: 40px;
+}
+
+.sixty-px{
+	height: 60px;
+}
+.eighty-px{
+	height: 80px;
+}
+
+.padleft10{
+	margin-left: 10px;
+}
+.padleft30{
+	margin-left: 30px;
+}
+
+.center{
+	margin-left: 50px;
 }

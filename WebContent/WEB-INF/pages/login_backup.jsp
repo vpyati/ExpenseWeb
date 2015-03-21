@@ -46,7 +46,7 @@
 							<li><a href="#">Contact</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="#">Welcome ${useremail}!</a></li>
+							<li><a href="#">Welcome Vikram!</a></li>
 						</ul>
 					</div>
 					<!--/.nav-collapse -->
