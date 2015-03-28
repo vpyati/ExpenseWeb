@@ -3,7 +3,6 @@ package com.vikram.resolver;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
@@ -14,6 +13,8 @@ import org.springframework.web.util.WebUtils;
 import com.vikram.custombeans.User;
 import com.vikram.openidconnect.IOpenConnectCredentials.ICredentials;
 import com.vikram.openidconnect.google.GoogleCredentials;
+
+
 public class UserResolver implements HandlerMethodArgumentResolver{
 
 	

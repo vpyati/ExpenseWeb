@@ -4,7 +4,7 @@
   <artifactId>ExpenseWeb</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  	<properties>
+	<properties>
 		<cxf.version>2.2.3</cxf.version>
 		<aws-sdk-version>1.8.10.2</aws-sdk-version>
 		<org.springframework.version>4.0.8.RELEASE</org.springframework.version>
@@ -16,28 +16,28 @@
 			<artifactId>aws-java-sdk</artifactId>
 			<version>${aws-sdk-version}</version>
 			<exclusions>
-	            <exclusion>
+				<exclusion>
 					<groupId>org.springframework</groupId>
 					<artifactId>spring-core</artifactId>
 				</exclusion>
-	            <exclusion>
+				<exclusion>
 					<groupId>org.springframework</groupId>
 					<artifactId>spring-web</artifactId>
 				</exclusion>
-	            <exclusion>
+				<exclusion>
 					<groupId>org.springframework</groupId>
 					<artifactId>spring-MVC</artifactId>
 				</exclusion>
-	            <exclusion>
+				<exclusion>
 					<groupId>org.springframework</groupId>
 					<artifactId>spring-context</artifactId>
 				</exclusion>
-	            <exclusion>
+				<exclusion>
 					<groupId>org.springframework</groupId>
 					<artifactId>spring-beans</artifactId>
 				</exclusion>
 
-         	</exclusions>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
@@ -86,9 +86,9 @@
 			<version>3.2.1.RELEASE</version>
 		</dependency>
 		<dependency>
-		  <groupId>org.apache.httpcomponents</groupId>
-		  <artifactId>httpclient</artifactId>
-		  <version>4.3.6</version>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.3.6</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -100,7 +100,7 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-	</dependencies>
+</dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <resources>
