@@ -16,13 +16,10 @@ import com.vikram.openidconnect.google.GoogleCredentials;
 
 
 public class UserResolver implements HandlerMethodArgumentResolver{
-
 	
 	private GoogleCredentials googleCredentials;
 	
-
 	public UserResolver(GoogleCredentials googleCredentials) {
-		super();
 		this.googleCredentials = googleCredentials;
 	}
 

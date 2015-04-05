@@ -25,8 +25,7 @@ public class GoogleLogin {
 	public ModelAndView login(){
 				
 		RedirectView rv =  new RedirectView(getURL());
-		return new ModelAndView(rv);
-				
+		return new ModelAndView(rv);				
 	}
 
 
