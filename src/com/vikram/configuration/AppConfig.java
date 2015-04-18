@@ -85,7 +85,7 @@ public class AppConfig  extends WebMvcConfigurerAdapter {
 		return new AwsDynamoDBKeyValueStore();
 	}
 	
-	@Bean
+	@Bean(name="oauthCredentials")
 	public IOAuthCredentials getOauthCredentials(){
 		return new OAuthCredentials(getCredentials());
 	}
