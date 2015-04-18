@@ -61,7 +61,7 @@ public class AppConfig  extends WebMvcConfigurerAdapter {
 	}
 
 	private StaticCredentialsProvider getStaticCredentialProvider() {
-		
+				
 		String accessKey = System.getProperty("AWS_ACCESS_KEY_ID");
 		String secretKey = System.getProperty("AWS_SECRET_KEY");
 		
@@ -69,17 +69,8 @@ public class AppConfig  extends WebMvcConfigurerAdapter {
 			accessKey = System.getenv("AWS_ACCESS_KEY_ID");
 			secretKey = System.getenv("AWS_SECRET_KEY"); 
 		}
-		
-		
-		BasicAWSCredentials credentials = null;
-		try {
-			credentials = new BasicAWSCredentials(accessKey,secretKey);
-
-		} catch (Exception e) {
-			credentials = new BasicAWSCredentials("","");
-		}
-		
-		return new StaticCredentialsProvider(credentials);
+				
+		return new StaticCredentialsProvider(new BasicAWSCredentials(accessKey,secretKey));
 	}
 	
 	@Bean
