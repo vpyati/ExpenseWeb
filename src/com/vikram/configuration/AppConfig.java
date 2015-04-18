@@ -1,12 +1,12 @@
 package com.vikram.configuration;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -21,22 +21,15 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.vikram.db.KeyValueStore;
 import com.vikram.db.awsdynamodb.AwsDynamoDBKeyValueStore;
-import com.vikram.http.HttpClientUtil;
-import com.vikram.openidconnect.google.GoogleCredentialToUserConverter;
-import com.vikram.openidconnect.google.GoogleCredentials;
-import com.vikram.openidconnect.google.GoogleOpenConnectDiscovery;
-import com.vikram.resolver.UserResolver;
+import com.vikram.openconnect.login.input.ICredentialInput;
+import com.vikram.openconnect.login.input.IOAuthCredentials;
+import com.vikram.openconnect.login.input.OAuthCredentials;
+import com.vikram.openconnect.login.providers.OAuthProvider;
 
 @Configuration
 @ComponentScan("com.vikram.web")
 @EnableWebMvc
 public class AppConfig  extends WebMvcConfigurerAdapter {
-	
-	@Override
-	public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
-		UserResolver resolver = new UserResolver(getGoogleCredentials());
-		argumentResolvers.add(resolver);
-	}
 	
 	@Override  
     public void addResourceHandlers(ResourceHandlerRegistry registry) {  
@@ -48,21 +41,6 @@ public class AppConfig  extends WebMvcConfigurerAdapter {
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer properties() {
 	    return new PropertySourcesPlaceholderConfigurer();
-	}
-
-	@Bean
-	public GoogleOpenConnectDiscovery getGoogleDiscovery(){
-		return new GoogleOpenConnectDiscovery();
-	}
-	
-	@Bean
-	public HttpClientUtil getHttpUtil(){
-		return new HttpClientUtil();
-	}
-	
-	@Bean
-	public GoogleCredentials getGoogleCredentials(){
-		return new GoogleCredentials();
 	}
 	
 	@Bean
@@ -117,7 +95,35 @@ public class AppConfig  extends WebMvcConfigurerAdapter {
 	}
 	
 	@Bean
-	public GoogleCredentialToUserConverter getGoogleUserConverter(){
-		return new GoogleCredentialToUserConverter();
+	public IOAuthCredentials getOauthCredentials(){
+		return new OAuthCredentials(getCredentials());
+	}
+
+	private List<ICredentialInput> getCredentials() {
+		ICredentialInput input = new ICredentialInput() {
+			
+			@Override
+			public String getRedirectUri() {
+				return getKeyValueStore().getValue("google_redirect_uri");
+			}
+			
+			@Override
+			public OAuthProvider getProvider() {
+				return OAuthProvider.GOOGLE;
+			}
+			
+			@Override
+			public String getClientSecret() {
+				return getKeyValueStore().getValue("google_client_secret");
+			}
+			
+			@Override
+			public String getClientId() {
+				return getKeyValueStore().getValue("google_client_id");
+			}
+		};
+		List<ICredentialInput> credentials = new ArrayList<ICredentialInput>();
+		credentials.add(input);
+		return credentials;
 	}
 }
