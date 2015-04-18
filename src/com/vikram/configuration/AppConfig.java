@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -28,6 +29,7 @@ import com.vikram.openconnect.login.providers.OAuthProvider;
 
 @Configuration
 @ComponentScan("com.vikram.web")
+@ImportResource("classpath:META-INF/oal.xml")
 @EnableWebMvc
 public class AppConfig  extends WebMvcConfigurerAdapter {
 	
@@ -85,7 +87,7 @@ public class AppConfig  extends WebMvcConfigurerAdapter {
 		return new AwsDynamoDBKeyValueStore();
 	}
 	
-	@Bean(name="oauthCredentials")
+	@Bean
 	public IOAuthCredentials getOauthCredentials(){
 		return new OAuthCredentials(getCredentials());
 	}
