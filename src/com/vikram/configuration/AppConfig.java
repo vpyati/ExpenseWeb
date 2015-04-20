@@ -55,11 +55,8 @@ public class AppConfig  extends WebMvcConfigurerAdapter {
 	}
 	
 	@Bean
-	public AWSCredentialsProvider getAwsCredentialsProvider(){
-				      
-		//return new AWSCredentialsProviderChain(new DefaultAWSCredentialsProviderChain());
+	public AWSCredentialsProvider getAwsCredentialsProvider(){				      
 		return getStaticCredentialProvider();
-
 	}
 
 	private StaticCredentialsProvider getStaticCredentialProvider() {

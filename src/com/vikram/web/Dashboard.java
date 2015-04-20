@@ -16,7 +16,6 @@ public class Dashboard {
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView login(Identity user) {
  
-
 		if(user.isValid()){
 			ModelAndView mv = new ModelAndView();
 			mv.addObject("useremail", user.getEmailAddress());
@@ -25,11 +24,6 @@ public class Dashboard {
 		
 		RedirectView view = new RedirectView("/login",true);
 		
-		return new ModelAndView(view);
-		
+		return new ModelAndView(view);		
 	}
-
-	
-
-
 }
