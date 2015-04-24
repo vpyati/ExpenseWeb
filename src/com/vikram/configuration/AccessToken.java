@@ -20,7 +20,10 @@ public class AccessToken implements IAccessToken {
 	@Override
 	public String getAccessToken(HttpServletRequest request) {
 		Cookie accessToken = WebUtils.getCookie(request, COOKIE_NAME);
-		return accessToken==null?"":accessToken.getValue();
+		if(accessToken!=null){
+			return accessToken.getValue();
+		}
+		return "";
 	}
 
 	
