@@ -22,6 +22,7 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.vikram.db.KeyValueStore;
 import com.vikram.db.awsdynamodb.AwsDynamoDBKeyValueStore;
+import com.vikram.openconnect.login.IAccessToken;
 import com.vikram.openconnect.login.input.ICredentialInput;
 import com.vikram.openconnect.login.input.IOAuthCredentials;
 import com.vikram.openconnect.login.input.OAuthCredentials;
@@ -89,6 +90,11 @@ public class AppConfig  extends WebMvcConfigurerAdapter {
 		return new OAuthCredentials(getCredentials());
 	}
 
+	@Bean
+	public IAccessToken getAccessToken(){
+		return new AccessToken();
+	}
+	
 	private List<ICredentialInput> getCredentials() {
 		ICredentialInput input = new ICredentialInput() {
 			
