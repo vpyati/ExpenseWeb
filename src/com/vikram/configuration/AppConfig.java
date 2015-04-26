@@ -22,11 +22,11 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.vikram.db.KeyValueStore;
 import com.vikram.db.awsdynamodb.AwsDynamoDBKeyValueStore;
-import com.vikram.openconnect.login.core.input.ICredentialInput;
-import com.vikram.openconnect.login.core.input.IOAuthCredentials;
-import com.vikram.openconnect.login.core.input.OAuthCredentials;
-import com.vikram.openconnect.login.core.providers.OAuthProvider;
-import com.vikram.openconnect.login.web.IAccessToken;
+import com.vikram.openidconnect.login.core.input.ICredentialInput;
+import com.vikram.openidconnect.login.core.input.IOAuthCredentials;
+import com.vikram.openidconnect.login.core.input.OAuthCredentials;
+import com.vikram.openidconnect.login.core.providers.OAuthProvider;
+import com.vikram.openidconnect.login.web.IAccessToken;
 
 @Configuration
 @ComponentScan("com.vikram.web")

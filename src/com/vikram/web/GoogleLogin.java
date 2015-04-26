@@ -3,8 +3,8 @@ package com.vikram.web;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.vikram.openconnect.login.core.providers.OAuthProvider;
-import com.vikram.openconnect.login.web.controller.OpenconnectLoginController;
+import com.vikram.openidconnect.login.core.providers.OAuthProvider;
+import com.vikram.openidconnect.login.web.controller.OpenconnectLoginController;
 
 @Controller
 @RequestMapping("/googlelogin")

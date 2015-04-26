@@ -6,8 +6,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.util.WebUtils;
 
-import com.vikram.openconnect.login.core.providers.OAuthProvider;
-import com.vikram.openconnect.login.web.IAccessToken;
+import com.vikram.openidconnect.login.core.providers.OAuthProvider;
+import com.vikram.openidconnect.login.web.IAccessToken;
 
 public class AccessToken implements IAccessToken {
 

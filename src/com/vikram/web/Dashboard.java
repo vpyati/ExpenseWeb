@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
-import com.vikram.openconnect.login.core.identity.Identity;
+import com.vikram.openidconnect.login.core.identity.Identity;
 
 
 @Controller
