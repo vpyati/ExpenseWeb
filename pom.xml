@@ -101,9 +101,9 @@
 			<version>1.2</version>
 		</dependency>
 		<dependency>
-			<groupId>com.vikram.openconnect</groupId>
-			<artifactId>login</artifactId>
-			<version>0.9.1-SNAPSHOT</version>
+			<groupId>com.vikram.openidconnect</groupId>
+			<artifactId>login-web</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 </dependencies>
   <build>

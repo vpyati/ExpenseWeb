@@ -3,7 +3,7 @@ package com.vikram.web;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.vikram.openconnect.login.controller.OpenconnectCallbackController;
+import com.vikram.openconnect.login.web.controller.OpenconnectCallbackController;
 
 @Controller
 @RequestMapping("/oauth2callback")

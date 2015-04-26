@@ -22,15 +22,15 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.vikram.db.KeyValueStore;
 import com.vikram.db.awsdynamodb.AwsDynamoDBKeyValueStore;
-import com.vikram.openconnect.login.IAccessToken;
-import com.vikram.openconnect.login.input.ICredentialInput;
-import com.vikram.openconnect.login.input.IOAuthCredentials;
-import com.vikram.openconnect.login.input.OAuthCredentials;
-import com.vikram.openconnect.login.providers.OAuthProvider;
+import com.vikram.openconnect.login.core.input.ICredentialInput;
+import com.vikram.openconnect.login.core.input.IOAuthCredentials;
+import com.vikram.openconnect.login.core.input.OAuthCredentials;
+import com.vikram.openconnect.login.core.providers.OAuthProvider;
+import com.vikram.openconnect.login.web.IAccessToken;
 
 @Configuration
 @ComponentScan("com.vikram.web")
-@ImportResource("classpath:META-INF/oal.xml")
+@ImportResource("classpath:META-INF/oal-web.xml")
 @EnableWebMvc
 public class AppConfig  extends WebMvcConfigurerAdapter {
 	
