@@ -8,18 +8,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
+import com.vikram.model.Expense;
 import com.vikram.openidconnect.login.core.identity.Identity;
 import com.vikram.util.Environment;
 import com.vikram.util.TestIdentity;
 
-
 @Controller
-@RequestMapping("/dashboard")
-public class Dashboard {
+@RequestMapping("/newexpense")
+public class NewExpense {
 	
-	@RequestMapping(method = RequestMethod.GET)
-	public ModelAndView login(Identity user, HttpServletRequest request) {		
-		
+	@RequestMapping(method = RequestMethod.POST)
+	public ModelAndView addExpense(Identity user, Expense expense, HttpServletRequest request) {
+ 		
 		if(Environment.isDevelopment(request)){
 			user = TestIdentity.get();
 		}
@@ -28,9 +28,11 @@ public class Dashboard {
 			RedirectView view = new RedirectView("/login",true);			
 			return new ModelAndView(view);		
 		}
-		
+			
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("useremail", user.getEmailAddress());
 		return mv;
 	}
+
+	
+
 }

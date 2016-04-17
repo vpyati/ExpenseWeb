@@ -101,3 +101,7 @@ body {
 .center{
 	margin-left: 50px;
 }
+
+.top-buffer-20 { margin-top:20px; }
+
+.top-buffer-40 { margin-top:40px; }
