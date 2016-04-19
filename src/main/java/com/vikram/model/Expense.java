@@ -6,6 +6,15 @@ public class Expense {
 	private String description;
 	private String creationDate;
 	private String category;
+	private String tags;
+	
+	
+	public String getTags() {
+		return tags;
+	}
+	public void setTags(String tags) {
+		this.tags = tags;
+	}
 	public String getName() {
 		return name;
 	}

@@ -105,3 +105,15 @@ body {
 .top-buffer-20 { margin-top:20px; }
 
 .top-buffer-40 { margin-top:40px; }
+
+.bold-underline{
+	font-weight: bold;
+  	text-decoration: underline;
+}
+
+.italic-green{
+	font-style: italic;
+	color: #00FF00;
+	font-weight: bold;
+	
+}

@@ -7,7 +7,7 @@
 		<div class="col-md-4 col-xs-12">
 			<div class="eighty-px" align="center">
 
-				<p>Copyright © 2014 TRAx</p>
+				<p>Copyright © 2016 TRAx</p>
 				<nav>
 					<ul>
 						<li><a href="#">Home</a></li>

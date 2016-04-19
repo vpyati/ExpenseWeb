@@ -1,4 +1,4 @@
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -30,8 +30,17 @@
 			
 			<div class="container-fluid">
 	<form action="/newexpense" method="post">
+	
+      <div class="row top-buffer-20 italic-green">
+        <div class="col-md-offset-5 col-md-7">
+        	<c:if test="${not empty expenseAdded}">
+				Expense Added Successfully !!!				
+			</c:if>       	
+        </div>
+      </div>	
+	
       <!-- row 2 -->
-      <div class="row top-buffer-20-20">
+      <div class="row top-buffer-20 bold-underline">
         <div class="col-md-offset-5 col-md-7">Add a New Expense</div>
       </div>
 
