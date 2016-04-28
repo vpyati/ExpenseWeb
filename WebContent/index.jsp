@@ -19,7 +19,7 @@
   </head>
 
   <body>
-  	index jsp
+  	<jsp:forward page="/newexpense" /> 
   </body>
 </html>
 
