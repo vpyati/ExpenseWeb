@@ -41,7 +41,7 @@
 	
       <!-- row 2 -->
       <div class="row top-buffer-20 bold-underline">
-        <div class="col-md-offset-5 col-md-7">Add a New Expense Changed</div>
+        <div class="col-md-offset-5 col-md-7">Add a New Expense</div>
       </div>
 
       <!-- row 3 -->
