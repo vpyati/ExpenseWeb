@@ -34,7 +34,7 @@
       <div class="row top-buffer-20 italic-green">
         <div class="col-md-offset-5 col-md-7">
         	<c:if test="${not empty expenseAdded}">
-				Expense Added Successfully !!!				
+				Expense Added Successfully !!				
 			</c:if>       	
         </div>
       </div>	
