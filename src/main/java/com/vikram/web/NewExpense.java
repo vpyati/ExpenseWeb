@@ -1,6 +1,8 @@
 package com.vikram.web;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -27,6 +29,8 @@ import com.vikram.util.TestIdentity;
 public class NewExpense {
 	
 	private static final String SERVICE_ENDPOINT = "http://localhost:8080/services/expense";
+	private static SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY-MM-dd");
+
 
 	@RequestMapping(method = RequestMethod.POST)
 	public ModelAndView addExpense(Identity user, Expense expense, HttpServletRequest request) {
@@ -45,6 +49,7 @@ public class NewExpense {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("useremail", user.getEmailAddress());
 		mv.addObject("expenseAdded",true);
+		mv.addObject("current_date", dateFormat.format(new Date()));
 		mv.setViewName("dashboard");
 		return mv;
 	}
