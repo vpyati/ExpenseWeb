@@ -28,7 +28,7 @@ import com.vikram.util.TestIdentity;
 @RequestMapping("/newexpense")
 public class NewExpense {
 	
-	private static final String SERVICE_ENDPOINT = "http://www.tracktheexpense.in/services/expense";
+	private static final String SERVICE_ENDPOINT = "http://www.trackthespending.in/services/expense";
 	
 	private static SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY-MM-dd");
 
