@@ -1,5 +1,8 @@
 package com.vikram.web;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
@@ -17,6 +20,8 @@ import com.vikram.util.TestIdentity;
 @RequestMapping("/dashboard")
 public class Dashboard {
 	
+	private static SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY-MM-dd");
+	
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView login(Identity user, HttpServletRequest request) {		
 		
@@ -31,6 +36,7 @@ public class Dashboard {
 		
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("useremail", user.getEmailAddress());
+		mv.addObject("current_date", dateFormat.format(new Date()));
 		return mv;
 	}
 }
