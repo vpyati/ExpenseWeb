@@ -21,6 +21,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vikram.model.Expense;
 import com.vikram.openidconnect.login.core.identity.Identity;
+import com.vikram.openidconnect.login.core.providers.OAuthProvider;
 import com.vikram.util.Environment;
 import com.vikram.util.TestIdentity;
 
@@ -45,7 +46,7 @@ public class NewExpense {
 			return new ModelAndView(view);		
 		}
 		
-		invokeAddExpenseService(expense);
+		invokeAddExpenseService(expense,user);
 		
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("useremail", user.getEmailAddress());
@@ -55,11 +56,15 @@ public class NewExpense {
 		return mv;
 	}
 
-	private void invokeAddExpenseService(Expense expense)  {
+	private void invokeAddExpenseService(Expense expense,Identity user)  {
 		HttpClient client = HttpClientBuilder.create().build();
 
 		HttpPost post = new HttpPost(SERVICE_ENDPOINT);
-		expense.setTags("sample tags");
+		post.addHeader("AUTHORIZATION", user.getAccessToken());
+		post.addHeader("OAUTH_PROVIDER", OAuthProvider.GOOGLE.name());
+		
+		expense.setTags(getTags(expense));
+		
 
 		try {
 			post.setEntity(new StringEntity(new ObjectMapper().writeValueAsString(expense),ContentType.APPLICATION_JSON));
@@ -67,6 +72,21 @@ public class NewExpense {
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
+	}
+
+	private String getTags(Expense expense) {
+		
+		StringBuilder str = new StringBuilder();
+		
+		String[] tokens = expense.getName().split(" ");
+		for(String token:tokens){
+			str.append(token+",");
+		}
+		
+		str.append(expense.getCategory());
+		
+		return str.toString();
+		
 	}
 	
 
