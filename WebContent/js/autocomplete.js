@@ -1,7 +1,7 @@
 $(function() {
  
     $("#cat_title").autocomplete({
-        source: "/services/searchCategory"
+        source: "/services/open/searchCategory"
     });
  
 });
