@@ -7,14 +7,14 @@ public class Expense {
 	private String creationDate;
 	private String category;
 	private String tags;
-	private String catId;
+	private String categoryPath;
 
 	
-	public String getCatId() {
-		return catId;
+	public String getCategoryPath() {
+		return categoryPath;
 	}
-	public void setCatId(String catId) {
-		this.catId = catId;
+	public void setCategoryPath(String categoryPath) {
+		this.categoryPath = categoryPath;
 	}
 	public String getTags() {
 		return tags;
