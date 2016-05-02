@@ -60,7 +60,7 @@
    
       <div class="row top-buffer-20">
         <div class="col-md-offset-4 col-md-1">Category</div>
-        <div class="col-md-1"><input name="category" type="text" id="cat_title"></div>
+        <div class="col-md-1"><input name="categoryPath" type="text" id="cat_title"></div>
       </div>
 
       <div class="row top-buffer-20">
@@ -73,7 +73,7 @@
         <div class="col-md-1"><input name="description" type="text"></div>
       </div>
       
-           
+      <input type="hidden" name="category">     
       <div class="row top-buffer-20">
         <div class="col-md-offset-5 col-md-7"><input id="submit" type="submit"></div>
       </div>

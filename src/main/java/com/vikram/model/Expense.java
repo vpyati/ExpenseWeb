@@ -7,8 +7,15 @@ public class Expense {
 	private String creationDate;
 	private String category;
 	private String tags;
+	private String catId;
+
 	
-	
+	public String getCatId() {
+		return catId;
+	}
+	public void setCatId(String catId) {
+		this.catId = catId;
+	}
 	public String getTags() {
 		return tags;
 	}
