@@ -73,7 +73,7 @@
         <div class="col-md-1"><input name="description" type="text"></div>
       </div>
       
-      <input type="hidden" name="category">     
+      <input type="hidden" name="category" id="cat_id">     
       <div class="row top-buffer-20">
         <div class="col-md-offset-5 col-md-7"><input id="submit" type="submit"></div>
       </div>
