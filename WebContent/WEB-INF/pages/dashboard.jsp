@@ -57,6 +57,12 @@
         <div class="col-md-offset-4 col-md-1">Name</div>
         <div class="col-md-1"><input name="name" type="text"></div>
       </div>
+
+      <div class="row top-buffer-20">
+        <div class="col-md-offset-4 col-md-1">Amount (in Rs)</div>
+        <div class="col-md-1"><input name="amount" type="text"></div>
+      </div>
+
    
       <div class="row top-buffer-20">
         <div class="col-md-offset-4 col-md-1">Category</div>

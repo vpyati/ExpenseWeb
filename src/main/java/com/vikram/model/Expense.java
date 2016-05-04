@@ -8,8 +8,15 @@ public class Expense {
 	private String category;
 	private String tags;
 	private String categoryPath;
-
+	private String amount;
 	
+	
+	public String getAmount() {
+		return amount;
+	}
+	public void setAmount(String amount) {
+		this.amount = amount;
+	}
 	public String getCategoryPath() {
 		return categoryPath;
 	}
