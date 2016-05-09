@@ -75,6 +75,7 @@ public class NewExpense {
 		
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("useremail", user.getEmailAddress());
+		mv.addObject("tab","NEW_EXPENSE");
 		mv.addObject("current_date", dateFormat.format(new Date()));
 		return mv;
 		
