@@ -43,7 +43,8 @@ public class NewExpense {
 	public ModelAndView addExpense(Identity user, Expense expense, HttpServletRequest request) {
  		
 		if(Environment.isDevelopment(request)){
-			user = TestIdentity.get();
+			String UID = request.getParameter("UID");			
+			user = UID==null?TestIdentity.get():TestIdentity.get(UID);
 		}
 		
 		if(!user.isValid()){			
@@ -55,12 +56,30 @@ public class NewExpense {
 		
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("useremail", user.getEmailAddress());
+		mv.addObject("tab","NEW_EXPENSE");
 		mv.addObject("expenseAdded",true);
 		mv.addObject("current_date", dateFormat.format(new Date()));
-		mv.setViewName("dashboard");
 		return mv;
 	}
 
+	@RequestMapping(method = RequestMethod.GET)
+	public ModelAndView showBlankExpense(Identity user,HttpServletRequest request){
+		if(Environment.isDevelopment(request)){
+			user = TestIdentity.get();
+		}
+		
+		if(!user.isValid()){			
+			RedirectView view = new RedirectView("/login",true);			
+			return new ModelAndView(view);		
+		}
+		
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("useremail", user.getEmailAddress());
+		mv.addObject("current_date", dateFormat.format(new Date()));
+		return mv;
+		
+	}
+	
 	private void invokeAddExpenseService(Expense expense,Identity user, HttpServletRequest request)  {
 		HttpClient client = HttpClientBuilder.create().build();
 

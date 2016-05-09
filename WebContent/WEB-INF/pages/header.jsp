@@ -17,9 +17,9 @@
 			<c:if test="${not empty useremail}">
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="#">New Expense</a></li>
-						<li><a href="#">Dashboard</a></li>
-						<li><a href="#">Contact</a></li>
+						<li <c:if test="${tab eq 'NEW_EXPENSE'}">class="active"</c:if>><a href="newexpense">New Expense</a></li>
+						<li <c:if test="${tab eq 'DASHBOARD'}">class="active"</c:if>><a href="/dashboard">Dashboard</a></li>
+						<li <c:if test="${tab eq 'CONTACT'}">class="active"</c:if>><a href="#">Contact</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#">Welcome ${useremail}!</a></li>
